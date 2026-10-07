@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS responses (id TEXT PRIMARY KEY NOT NULL, payload TEXT NOT NULL, edit_hash TEXT NOT NULL, created_at TEXT NOT NULL);

@@ -1,0 +1,1 @@
+import{env as e}from"cloudflare:workers";function t(){if(!e.DB)throw Error(`Database unavailable`);return e.DB}async function n(e){let t=await crypto.subtle.digest(`SHA-256`,new TextEncoder().encode(e));return Array.from(new Uint8Array(t),e=>e.toString(16).padStart(2,`0`)).join(``)}export{n,t};

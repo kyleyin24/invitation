@@ -1,0 +1,1 @@
+const fs=require('node:fs');const id=process.argv[2];if(!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id||'')){throw new Error('请填入Cloudflare返回的database_id');}const p=__dirname+'/wrangler.json';const c=JSON.parse(fs.readFileSync(p,'utf8'));c.d1_databases[0].database_id=id;fs.writeFileSync(p,JSON.stringify(c,null,2));console.log('数据库配置完成');
